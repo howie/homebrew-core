@@ -15,7 +15,7 @@ class ApacheDrill < Formula
   test do
     ENV.java_cache
 
-    ENV["DRILL_LOG_DIR"] = "/tmp"
+    ENV["DRILL_LOG_DIR"] = ENV["TMP"]
     pipe_output("#{bin}/sqlline -u jdbc:drill:zk=local", "!tables", 0)
   end
 end
